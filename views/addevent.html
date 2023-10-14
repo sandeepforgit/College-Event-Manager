@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2d4059;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      color: #2d4059;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+      width: 50%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #ea5455;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff7b77;
+    }
+  </style>
+</head>
+<body>
+  <h1>Add Event</h1>
+  <form action="/addEvent" method="post">
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" name="eventName" required><br><br>
+
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate" name="eventDate" required><br><br>
+
+    <label for="eventStartTime">Event Start Time:</label>
+    <input type="time" id="eventStartTime" name="eventStartTime" required><br><br>
+
+    <label for="eventEndTime">Event End Time:</label>
+    <input type="time" id="eventEndTime" name="eventEndTime" required><br><br>
+
+    <label for="eventDescription">Event Description:</label>
+    <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea><br><br>
+
+    <label for="eventLocation">Event Location:</label>
+    <input type="text" id="eventLocation" name="eventLocation" required><br><br>
+
+    <input type="submit" value="Add Event">
+  </form>
+</body>
+</html>

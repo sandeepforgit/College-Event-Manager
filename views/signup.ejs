@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-image: url('https://e1.pxfuel.com/desktop-wallpaper/191/746/desktop-wallpaper-cute-cartoon-laptop-aesthetic-book-cartoon.jpg'); */
+            background-color: #8746a8;
+            background-size: cover;
+            margin: 0;
+            padding-right: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            padding-right: 30px;
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            background-color: rgba(103, 99, 99, 0.8);
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group button {
+            background-color: #78309c;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="color: white;">Sign Up</h2>
+        
+        <form method="POST" action="/signupsubmit" style="color: white;">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="username-error" style="color: red;">
+                    <% if (errors.includes("Email already exists")) { %>
+                        Email already exists.
+                    <% } %>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message" id="password-error" style="color: red;">
+                    <% if (errors.includes("Password must be at least 8 characters long.")) { %>
+                        Password must be at least 8 characters long.
+                    <% } %>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <span class="error-message" id="confirm-password-error" style="color: red;">
+                    <% if (errors.includes("Password and confirm password do not match.")) { %>
+                        Password and confirm password do not match.
+                    <% } %>
+                </span>
+            </div>
+            <div class="form-group">
+                <button type="submit" style="color: rgb(253, 249, 255);">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Events</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #2d4059;
+  padding: 20px;
+}
+
+.event-list {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li.event {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+li.event strong {
+  color: #007bff;
+}
+
+/* Add more styling as needed */
+
+  </style>
+
+</head>
+<body>
+  <h1>My Events</h1>
+  <div class="event-list">
+    <ul>
+      <% events.forEach(event => { %>
+        <li class="event">
+          <strong><%= event.name %></strong><br>
+          Date: <%= event.date %><br>
+          Start Time: <%= event.startTime %><br>
+          End Time: <%= event.endTime %><br>
+          Location: <%= event.location %><br>
+          Description: <%= event.description %>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           background-color: rgb(25, 97, 54);
+           /* background-image: url('https://w0.peakpx.com/wallpaper/434/181/HD-wallpaper-anime-girl-walking-library-animal-ears-blonde-cape-cat-anime.jpg'); */
+           background-size: cover; 
+           margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-right: 500px;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+           
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            background-color: rgba(103, 99, 99, 0.8);
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group button {
+            background-color: #351246;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="color: white;">Login</h2>
+        <form method="POST" action="/loginsubmit" style="color: white;">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <span class="error-message" id="username-error" style="color: red;">
+                    <% if (errors.includes("User not found. Please create an account.")) { %>
+                        User not found. Please create an account.
+                    <% } %>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message" id="username-error" style="color: red;">
+                    <% if (errors.includes("Incorrect password. Please try again.")) { %>
+                        Incorrect password. Please try again.
+                    <% } %>
+                </span>
+            </div>
+            <div class="form-group">
+                <button type="submit" style="color: rgb(253, 249, 255);">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
